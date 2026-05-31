@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>fold — Sankha Cooray · paper engineering &amp; craft</title>
+<meta name="description" content="Paper engineering and craft work by Sankha Cooray — Stakco and other folded, cut, and assembled experiments. Where paper becomes mechanism.">
+<link rel="canonical" href="https://fold.sankhacooray.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="fold">
+<meta property="og:title" content="fold — Sankha Cooray · paper engineering &amp; craft">
+<meta property="og:description" content="Paper engineering and craft work — Stakco and other folded, cut, and assembled experiments.">
+<meta property="og:url" content="https://fold.sankhacooray.com/">
+<meta property="og:locale" content="en_US">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="fold — Sankha Cooray · paper engineering &amp; craft">
+<meta name="twitter:description" content="Paper engineering and craft work — Stakco and other folded, cut, and assembled experiments.">
+
+<meta name="theme-color" content="#0e0b08">
+
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --bg: #0e0b08;
+  --surface: #18130e;
+  --surface2: #211a13;
+  --border: #2e2419;
+  --border-soft: #241c14;
+  --text: #f4ede0;
+  --text-dim: #ada196;
+  --text-muted: #75695b;
+  --gold: #c46a3a;        /* terracotta / rust */
+  --gold-dim: #8c4a26;
+  --gold-soft: rgba(196,106,58,0.08);
+  --cyan: #e0a64c;        /* warm amber */
+  --cyan-dim: #a87a32;
+  --cyan-soft: rgba(224,166,76,0.08);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --maxw: 1080px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  background-image:
+    radial-gradient(800px 400px at 20% -10%, rgba(196,106,58,0.07), transparent 60%),
+    radial-gradient(700px 500px at 100% 20%, rgba(224,166,76,0.04), transparent 60%);
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+a { color: inherit; text-decoration: none; }
+
+.site-header {
+  position: sticky; top: 0; z-index: 10;
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  background: rgba(14,11,8,0.7);
+  border-bottom: 1px solid var(--border-soft);
+}
+.site-header .inner {
+  max-width: var(--maxw); margin: 0 auto;
+  padding: 18px 28px;
+  display: flex; align-items: center; gap: 32px;
+}
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand-mark { font-family: 'Instrument Serif', serif; font-size: 28px; color: var(--gold); letter-spacing: -0.5px; }
+.brand-tag { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1.5px; }
+.nav { margin-left: auto; display: flex; gap: 24px; font-size: 14px; color: var(--text-dim); }
+.nav a:hover { color: var(--text); }
+@media (max-width: 640px) { .nav { display: none; } }
+
+.hero { max-width: var(--maxw); margin: 0 auto; padding: 120px 28px 80px; }
+.hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 24px; }
+.hero h1 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: clamp(44px, 7vw, 84px); line-height: 1.05; letter-spacing: -1.5px; color: var(--text); margin-bottom: 28px; }
+.hero h1 em { color: var(--gold); font-style: italic; }
+.hero .lede { font-size: 19px; color: var(--text-dim); max-width: 640px; margin-bottom: 40px; }
+.hero .meta { display: flex; flex-wrap: wrap; gap: 8px 14px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); }
+.hero .meta span::before { content: "◦"; margin-right: 10px; color: var(--gold-dim); }
+
+.section { max-width: var(--maxw); margin: 0 auto; padding: 72px 28px; border-top: 1px solid var(--border-soft); }
+.section-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px; }
+.section-num { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--text-muted); letter-spacing: 1px; }
+.section h2 { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 36px; letter-spacing: -0.5px; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.about-grid p { font-size: 16px; color: var(--text-dim); }
+.about-grid p + p { margin-top: 16px; }
+.about-grid strong { color: var(--text); font-weight: 500; }
+.about-grid .accent { color: var(--gold); }
+@media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; gap: 24px; } }
+
+.featured {
+  background: linear-gradient(135deg, rgba(196,106,58,0.08), rgba(224,166,76,0.04));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px;
+  margin-top: 8px;
+}
+.featured .role { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 14px; }
+.featured h3 { font-family: 'Instrument Serif', serif; font-size: 38px; font-weight: 400; margin-bottom: 12px; letter-spacing: -0.5px; }
+.featured .where { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; font-family: 'JetBrains Mono', monospace; }
+.featured p { font-size: 16px; color: var(--text-dim); max-width: 720px; }
+.featured p + p { margin-top: 14px; }
+.featured .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.featured .chip {
+  font-family: 'JetBrains Mono', monospace; font-size: 10px;
+  letter-spacing: 1px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 999px;
+  border: 1px solid var(--border); color: var(--text-dim);
+  background: var(--surface);
+}
+.featured .link {
+  margin-top: 24px; display: inline-flex; align-items: center; gap: 6px;
+  font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--gold); letter-spacing: 1px;
+}
+.featured .link.muted { color: var(--text-muted); pointer-events: none; }
+.featured .link::after { content: "→"; transition: transform 0.2s; }
+.featured .link:hover::after { transform: translateX(3px); }
+.featured .link.muted::after { content: "·"; }
+
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 22px; transition: border-color 0.2s, transform 0.2s; }
+.card:hover { border-color: var(--border); transform: translateY(-2px); }
+.card .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+.card .role.cool { color: var(--cyan); }
+.card h3 { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; letter-spacing: -0.2px; }
+.card .where { font-size: 13px; color: var(--text-muted); margin-bottom: 12px; }
+.card p { font-size: 14px; color: var(--text-dim); }
+.card .link { margin-top: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gold); letter-spacing: 1px; display: inline-flex; align-items: center; gap: 6px; }
+.card .link.cool { color: var(--cyan); }
+.card .link::after { content: "→"; transition: transform 0.2s; }
+.card .link:hover::after { transform: translateX(3px); }
+.card .link.muted { color: var(--text-muted); pointer-events: none; }
+.card .link.muted::after { content: "·"; }
+
+.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.principle { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px; display: flex; align-items: flex-start; gap: 14px; transition: border-color 0.2s, background 0.2s; }
+.principle:hover { border-color: var(--gold-dim); background: var(--surface2); }
+.principle .glyph { width: 36px; height: 36px; border-radius: 8px; background: var(--surface2); display: flex; align-items: center; justify-content: center; font-family: 'Instrument Serif', serif; font-size: 18px; color: var(--gold); flex-shrink: 0; }
+.principle .body { flex: 1; min-width: 0; }
+.principle .name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 4px; }
+.principle .desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+
+.research-intro { font-size: 17px; color: var(--text-dim); max-width: 680px; margin-bottom: 36px; }
+.research-intro .cyan { color: var(--cyan); }
+
+.note { margin-top: 24px; font-size: 13px; color: var(--text-muted); font-style: italic; padding-left: 12px; border-left: 2px solid var(--border); }
+
+footer { max-width: var(--maxw); margin: 0 auto; padding: 60px 28px 80px; border-top: 1px solid var(--border-soft); margin-top: 40px; display: flex; flex-wrap: wrap; gap: 24px; align-items: baseline; font-size: 13px; color: var(--text-muted); }
+footer .mark { font-family: 'Instrument Serif', serif; color: var(--gold); font-size: 20px; }
+footer .links { margin-left: auto; display: flex; gap: 20px; }
+footer .links a:hover { color: var(--text); }
+
+.tag { display: inline-block; padding: 3px 10px; border-radius: 999px; font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; border: 1px solid var(--gold-dim); color: var(--gold); background: var(--gold-soft); }
+.tag.cool { border-color: var(--cyan-dim); color: var(--cyan); background: var(--cyan-soft); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="inner">
+    <div class="brand">
+      <span class="brand-mark">fold</span>
+      <span class="brand-tag">sankha cooray</span>
+    </div>
+    <nav class="nav">
+      <a href="#about">about</a>
+      <a href="#stakco">stakco</a>
+      <a href="#more">more</a>
+      <a href="#craft">craft</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">paper engineering · craft &amp; mechanism</div>
+  <h1>Paper, cut and<br>folded into <em>mechanism</em>.</h1>
+  <p class="lede">
+    A working space for hand-built objects — paper engineering, low-cost prototyping,
+    and the small mechanical ideas that fall out of folding things at the desk.
+  </p>
+  <div class="meta">
+    <span>Singapore</span>
+    <span>workshop hobby turned innovation</span>
+    <span>Stakco lives here</span>
+  </div>
+</section>
+
+<!-- ─── ABOUT ───────────────────────────────────────────── -->
+<section class="section" id="about">
+  <div class="section-head">
+    <span class="section-num">01</span>
+    <h2>About</h2>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p>
+        I have a long-running soft spot for <strong>paper, scissors, and folded mechanism</strong>.
+        Most evenings end with a sketch, a print-out, a few cuts, and the question
+        <em>can this hinge?</em>.
+      </p>
+      <p>
+        The work spans <strong class="accent">paper engineering, low-cost prototyping,
+        and quietly mechanical assemblies</strong> — pieces that move, snap, or
+        unfold the way a small machine should.
+      </p>
+    </div>
+    <div>
+      <p>
+        Some of these experiments stayed as one-off objects. One of them —
+        <strong>Stakco</strong> — kept going, through iterations, exhibitions, and
+        production runs. That is the flagship and the reason this page exists.
+      </p>
+      <p>
+        Beyond Stakco, this page collects the smaller paper-craft work: the
+        prototypes that didn't grow up, but were too good to throw away.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── STAKCO ──────────────────────────────────────────── -->
+<section class="section" id="stakco">
+  <div class="section-head">
+    <span class="section-num">02</span>
+    <h2>Stakco</h2>
+    <span class="tag">flagship</span>
+  </div>
+
+  <p class="research-intro">
+    The longest-running paper-engineering project — a folded, stackable object that
+    grew from a desk experiment into a multi-prototype, multi-exhibition platform.
+  </p>
+
+  <div class="featured">
+    <div class="role">flagship · paper engineering</div>
+    <h3>Stakco</h3>
+    <div class="where">multiple prototypes · exhibitions · production</div>
+    <p>
+      Stakco started as a paper-engineering experiment and grew into a family of
+      objects that sit at the intersection of <strong>craft, mechanism, and play</strong>.
+      Across iterations it has been a watch, a light, a puzzle, and a research
+      artefact for academic venues.
+    </p>
+    <p>
+      The thread is the same throughout: a small folded structure, hand-buildable,
+      designed for stacking and configuration — a piece of paper that knows what
+      it wants to be.
+    </p>
+    <div class="chips">
+      <span class="chip">Stakco Watch</span>
+      <span class="chip">Stakco Light</span>
+      <span class="chip">Stakco Play</span>
+      <span class="chip">AWWA collaboration</span>
+      <span class="chip">UIST submission</span>
+      <span class="chip">Prototypes for Humanity</span>
+    </div>
+    <span class="link muted">dedicated site coming · play.stakcos.com</span>
+  </div>
+</section>
+
+<!-- ─── MORE WORK ───────────────────────────────────────── -->
+<section class="section" id="more">
+  <div class="section-head">
+    <span class="section-num">03</span>
+    <h2>More Paper Work</h2>
+  </div>
+
+  <p class="research-intro">
+    Smaller pieces — sketches, prototypes, single-evening experiments. Some led
+    to Stakco. Others are happy to stay one-offs.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="role">prototype</div>
+      <h3>Folded mechanisms</h3>
+      <div class="where">desk experiments</div>
+      <p>
+        Hinges, snap-fits, and tension structures built from single sheets — the
+        vocabulary that eventually fed into Stakco.
+      </p>
+      <span class="link muted">photos to be added</span>
+    </div>
+    <div class="card">
+      <div class="role">prototype</div>
+      <h3>Pop-up &amp; kirigami pieces</h3>
+      <div class="where">paper craft</div>
+      <p>
+        Cards, scenes, and pop-up structures — the playful end of paper
+        engineering.
+      </p>
+      <span class="link muted">photos to be added</span>
+    </div>
+    <div class="card">
+      <div class="role">prototype</div>
+      <h3>Light enclosures</h3>
+      <div class="where">prototype lighting</div>
+      <p>
+        Paper as a lampshade material — diffusing, shadow-casting, and the
+        ergonomics of a switch you can fold.
+      </p>
+      <span class="link muted">photos to be added</span>
+    </div>
+    <div class="card">
+      <div class="role">future</div>
+      <h3>Open slot</h3>
+      <div class="where">to be added</div>
+      <p>
+        New paper experiments will land here as they earn a write-up — a
+        line drawing, a few photos, what worked, what tore.
+      </p>
+      <span class="link muted">to be added</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CRAFT ───────────────────────────────────────────── -->
+<section class="section" id="craft">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2>How I Work</h2>
+  </div>
+
+  <p class="research-intro">
+    A handful of habits the paper has taught me. Mostly: cheap materials, fast
+    iterations, and the willingness to throw a piece away the moment it stops
+    earning its keep.
+  </p>
+
+  <div class="principles">
+    <div class="principle">
+      <div class="glyph">✂</div>
+      <div class="body">
+        <div class="name">Cut before you commit</div>
+        <div class="desc">Print, cut, fold. A failed prototype is cheaper than a CAD mistake.</div>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="glyph">▱</div>
+      <div class="body">
+        <div class="name">Single-sheet first</div>
+        <div class="desc">If it can be made from one sheet, it should be. Constraint clarifies the geometry.</div>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="glyph">◰</div>
+      <div class="body">
+        <div class="name">Stackable / nestable</div>
+        <div class="desc">Objects that stack ship flat, store small, and feel intentional in the hand.</div>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="glyph">↔</div>
+      <div class="body">
+        <div class="name">Tension over glue</div>
+        <div class="desc">Where possible, the paper holds itself. Glue is a last resort, not a design.</div>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="glyph">⟲</div>
+      <div class="body">
+        <div class="name">Iterate every evening</div>
+        <div class="desc">Twenty mediocre versions beats two perfect ones on paper.</div>
+      </div>
+    </div>
+    <div class="principle">
+      <div class="glyph">↗</div>
+      <div class="body">
+        <div class="name">From hobby to platform</div>
+        <div class="desc">A craft hobby earns research weight when it can travel — Stakco proved that for me.</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="note">
+    Build photos, fold diagrams, and downloadable patterns will be added here as
+    each piece is documented.
+  </p>
+</section>
+
+<footer>
+  <span class="mark">fold</span>
+  <span>&copy; 2026 Sankha Cooray · paper, cut and folded</span>
+  <div class="links">
+    <a href="https://sankhacooray.com" target="_blank" rel="noopener">main site</a>
+    <a href="https://ensemble.sankhacooray.com" target="_blank" rel="noopener">ensemble</a>
+  </div>
+</footer>
+
+</body>
+</html>
