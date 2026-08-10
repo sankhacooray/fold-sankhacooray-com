@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: #0e0b08;
+    color: #f4ede0;
+    background-image:
+      radial-gradient(900px 460px at 16% -8%, rgba(196,106,58,0.14), transparent 60%),
+      radial-gradient(820px 560px at 104% 18%, rgba(224,166,76,0.10), transparent 60%);
+    padding: 72px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  .eyebrow {
+    font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 500;
+    color: #c46a3a; text-transform: uppercase; letter-spacing: 4px;
+  }
+  h1 {
+    font-family: 'Instrument Serif', serif; font-weight: 400;
+    font-size: 96px; line-height: 1.02; letter-spacing: -2px; margin-top: 28px;
+  }
+  h1 em { color: #c46a3a; font-style: italic; }
+  .lede {
+    font-size: 25px; color: #ada196; max-width: 720px; margin-top: 30px; line-height: 1.45;
+  }
+  .foot { display: flex; align-items: baseline; gap: 18px; }
+  .mark { font-family: 'Instrument Serif', serif; font-size: 40px; color: #c46a3a; letter-spacing: -0.5px; }
+  .by { font-family: 'JetBrains Mono', monospace; font-size: 17px; color: #75695b; letter-spacing: 1px; }
+  .url { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 17px; color: #ada196; letter-spacing: 1px; }
+  .fold { position: absolute; right: 70px; top: 84px; opacity: 0.9; }
+</style>
+</head>
+<body>
+  <svg class="fold" width="300" height="150" viewBox="0 0 300 150">
+    <path d="M150 12 L288 84 L150 66 L12 84 Z"
+      fill="none" stroke="#c46a3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+    <path d="M12 84 L150 66 L150 140 Z"
+      fill="none" stroke="#e0a64c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.8"/>
+    <path d="M288 84 L150 66 L150 140 Z"
+      fill="none" stroke="#c46a3a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+  </svg>
+
+  <div>
+    <div class="eyebrow">paper · craft · mechanism</div>
+    <h1>Where paper becomes <em>mechanism</em>.</h1>
+    <div class="lede">Paper engineering and craft — Stakco and other folded, cut, and assembled experiments.</div>
+  </div>
+
+  <div class="foot">
+    <span class="mark">fold</span>
+    <span class="by">Sankha Cooray</span>
+    <span class="url">fold.sankhacooray.com</span>
+  </div>
+</body>
+</html>
