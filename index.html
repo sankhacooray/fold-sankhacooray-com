@@ -144,8 +144,8 @@ a { color: inherit; text-decoration: none; }
 .featured .link.muted::after { content: "·"; }
 
 .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
-.card { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 22px; transition: border-color 0.2s, transform 0.2s; }
-.card:hover { border-color: var(--border); transform: translateY(-2px); }
+.card { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 22px; transition: border-color 0.2s, box-shadow 0.2s; }
+.card:hover { border-color: var(--border); box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
 .card .role { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--gold); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
 .card .role.cool { color: var(--cyan); }
 .card h3 { font-family: 'Instrument Serif', serif; font-size: 22px; font-weight: 400; margin-bottom: 6px; letter-spacing: -0.2px; }
@@ -157,6 +157,7 @@ a { color: inherit; text-decoration: none; }
 .card .link:hover::after { transform: translateX(3px); }
 .card .link.muted { color: var(--text-muted); pointer-events: none; }
 .card .link.muted::after { content: "·"; }
+.card .tag { margin-top: 14px; }
 
 .principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
 .principle { background: var(--surface); border: 1px solid var(--border-soft); border-radius: var(--radius-sm); padding: 18px; display: flex; align-items: flex-start; gap: 14px; transition: border-color 0.2s, background 0.2s; }
@@ -224,6 +225,7 @@ footer .links a:hover { color: var(--text); }
       <a href="#about">about</a>
       <a href="#stakco">stakco</a>
       <a href="#more">more</a>
+      <a href="#projects">projects</a>
       <a href="#craft">craft</a>
       <a href="#contact">contact</a>
     </nav>
@@ -373,10 +375,49 @@ footer .links a:hover { color: var(--text); }
   </div>
 </section>
 
+<!-- ─── SELECTED PROJECTS ───────────────────────────────── -->
+<section class="section" id="projects">
+  <div class="section-head">
+    <span class="section-num">04</span>
+    <h2>Selected Projects</h2>
+  </div>
+
+  <p class="research-intro">
+    Print-and-paper tooling that grew out of this lens — small utilities that turn
+    a folder of art into something you can cut, print, or scan. Both are still
+    bench-side, not yet on a public subdomain.
+  </p>
+
+  <div class="card-grid">
+    <div class="card">
+      <div class="role">tool · python</div>
+      <h3>Puzzle Composer</h3>
+      <div class="where">PyMuPDF · A4 print layout</div>
+      <p>
+        Lays out album photos at true physical scale — each scaled into a
+        205&nbsp;mm square on A4 and overlaid with the layers of an octagon
+        puzzle-cutting PDF template, rendered 1:1 in real millimetres.
+      </p>
+      <span class="tag">in the lab</span>
+    </div>
+    <div class="card">
+      <div class="role">tool · print + app</div>
+      <h3>Q-Hero</h3>
+      <div class="where">printable code sheet · Android</div>
+      <p>
+        A print-and-scan superhero game — an A4 sheet of QR-style codes that a
+        companion Android app reads to assemble mix-and-match hero characters
+        from interchangeable face and body art.
+      </p>
+      <span class="tag">in the lab</span>
+    </div>
+  </div>
+</section>
+
 <!-- ─── CRAFT ───────────────────────────────────────────── -->
 <section class="section" id="craft">
   <div class="section-head">
-    <span class="section-num">04</span>
+    <span class="section-num">05</span>
     <h2>How I Work</h2>
   </div>
 
@@ -441,7 +482,7 @@ footer .links a:hover { color: var(--text); }
 <!-- ===================== CONTACT ===================== -->
 <section class="section" id="contact">
   <div class="section-head">
-    <span class="section-num">05</span>
+    <span class="section-num">06</span>
     <h2>Get in touch</h2>
   </div>
   <div class="cf-wrap">
